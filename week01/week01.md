@@ -9,6 +9,21 @@
 Setting out to build our own Linux systems from scratch. Ultimately, each
 person will end up creating his own unique version of Cucumber Linux.
 
+Here's a rough outline:
+
+1. We'll start out by having everyone install the binary version of Cucumber
+   Linux 1.1. This will serve as our host system for building Cucumber Linux
+   from Scratch.
+2. Next, we'll take an in depth look at how to build software from source, in
+   order to make sure everyone is on the same page before we dive into compiling
+   an entire operating system.
+3. Then, we each build Cucumber Linux from Scratch. This process will basically
+   follow the process in the Linux from Scratch book; we will start out with
+   just the source code and compile an entire binary system from that.
+4. After this we can start to get into more advanced topics like fixing
+   security vulnerabilities, security hardening, customizing your system, adding
+   your own packages or anything else that the group's interested in.
+
 ## Who am I?
 
 I'm Scott Court, BDFL @ Cucumber Linux. I'm a Junior CSEC major at RIT who
