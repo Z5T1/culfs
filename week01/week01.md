@@ -103,22 +103,6 @@ the multilib group (this applies only if you are using the x86_64 architecture).
 I appologize, but the video and audio are out of sync in this week's recording.
 I will try to improve this for next week.
 
-## Virtual Machine Snapshot
-Every week, I will be working on my own virtual machine. I encourage all of you
-to work on your own machines as well. That being said, the work we do in this
-interest group is cumulative; if you miss one week, you will not be able to do
-the next week's activity until you get your VM caught up. I realize it is not
-reasonable to expect everyone to be able to attend every single week, so each
-week I will be takng a snapshot of my VM and making that available for you to
-use the following week if your VM isn't quite up to speed. So if you start to
-get behind with your VM, don't worry; you all have enough to worry about
-already. You can just make a copy of mine next week.
-
-Unfortunately, the virtual machine image is too large for me to upload
-anywhere, so if you need a copy you will have to get it from me in person. You
-can do this by either tracking me down on campus or by arriving to the meeting
-15 minutes early on the day you want to download it.
-
 The Virtual Machine snapshot taken at the end of this week is called 'Week01'.
 
 vi:syntax=markdown
