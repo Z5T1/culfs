@@ -44,6 +44,8 @@ Linux from Scratch book contains download links for the source for many common
 packages and can be quite helpful. See
 http://www.linuxfromscratch.org/blfs/view/stable/.
 
+---
+
     tar -xJf hexchat-2.10.2.tar.xz
     cd hexchat-2.10.2
 
@@ -62,6 +64,8 @@ that directory to get to the source code.
 Sidenote: if a tar archive does not place its files in a seperate directory, it
 will litter the current working directory wil files. This type of tar archive
 is called a tar bomb.
+
+---
 
     ./configure
 
@@ -82,9 +86,13 @@ Some flags to take note of:
 
 We will be making extensive use of these flags specifically in the near future.
 
+---
+
     make
 
 Compiles the actual source code into the binaries.
+
+---
 
     sudo make install
 
