@@ -41,6 +41,11 @@ I've learned a lot about Linux, operating systems and security along the way
 and now I'm here to share my learning experience with all of you by recreating
 it first hand.
 
+If you're interested in learning more about the history of Cucumber Linux, you
+can view a presentation I gave on the topic at
+https://cucumberlinux.com/~scott/presentations/An%20Overview%20of%20How%20I%20Created%20Cucumber%20Linux.pdf
+(video is available at https://youtu.be/uTfkcJsjKe8?t=2509).
+
 # Installing Cucumber Linux
 
 ## Why Use Cucumber Linux?
@@ -59,32 +64,62 @@ made it, there are a couple of legitimate reasons:
 
 See https://wiki.cucumberlinux.com/wiki/install:guide
 
+### Note on Step 1
+
+I used Cucumber Linux 1.1 x86_64 Full Edition. You must use the full edition of
+Cucumber Linux 1.1; otherwise, some required packages will be missing. I also
+strongly recommend using the 64 bit version.
+
+### Note on Step 3
+
+When you get to step 3, I used a GPT partition table with the following
+partitions:
+
+    +-----------+--------+----------------------------------------------------+
+    | Partition | Size   | Filesystem | Purpose/Mount Point                   |
+    +-----------+--------+----------------------------------------------------+
+    | /dev/sda1 | 4MB    | <none>     | BIOS Boot Partition (Make sure to use |
+    |           |        |            | hex code ef02 for the Partition Type) |
+    +-----------+--------+----------------------------------------------------+
+    | /dev/sda2 | 512MB  | ext2       | /boot                                 |
+    +-----------+--------+----------------------------------------------------+
+    | /dev/sda3 | 4GB    | swap       | swap                                  |
+    +-----------+--------+----------------------------------------------------+
+    | /dev/sda4 | 59.5GB | btrfs      | /                                     |
+    +-----------+--------+----------------------------------------------------+
+
+You can use whatever partitioning scheme you'd like of course; however, make
+sure your root partition is at least 56GB in size.
+
+### Note on Step 5
+
 When you get to step 5, make sure to install all of the package groups *except*
-the multilib group if you are using the x86_64 architecture. 
+the multilib group (this applies only if you are using the x86_64 architecture).
 
-## Configure the new Cucumber Linux System
+# Resources for this Week
+* Recording of this week's presentation: http://z5t1.com/culfs/week01.ogv
+* Cucumber Linux Installation Guide: https://wiki.cucumberlinux.com/wiki/install:guide
 
-# Building Software from Source
+I appologize, but the video and audio are out of sync in this week's recording.
+I will try to improve this for next week.
 
-## Example 1: HexChat
+## Virtual Machine Snapshot
+Every week, I will be working on my own virtual machine. I encourage all of you
+to work on your own machines as well. That being said, the work we do in this
+interest group is cumulative; if you miss one week, you will not be able to do
+the next week's activity until you get your VM caught up. I realize it is not
+reasonable to expect everyone to be able to attend every single week, so each
+week I will be takng a snapshot of my VM and making that available for you to
+use the following week if your VM isn't quite up to speed. So if you start to
+get behind with your VM, don't worry; you all have enough to worry about
+already. You can just make a copy of mine next week.
 
-Download HexChat from http://hexchat.net.
+Unfortunately, the virtual machine image is too large for me to upload
+anywhere, so if you need a copy you will have to get it from me in person. You
+can do this by either tracking me down on campus or by arriving to the meeting
+15 minutes early on the day you want to download it.
 
-Extract the source tarball and cd into the directory.
-
-Run the following commands:
-
-    ./configure
-    make
-    sudo make install
-
-## Example 2: SuperTuxKart
-
-Download SuperTuxKart from https://supertuxkart.net/Main_Page
-
-Extract the source tarball.
-
-Follow the compilation instructions in INSTALL.md. Notice that SuperTuxKart
-uses `cmake`, whereas HexChat used `./configure`.
+The Virtual Machine snapshot taken at the end of this week is called 'Week01'.
 
 vi:syntax=markdown
+
