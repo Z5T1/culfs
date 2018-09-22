@@ -263,7 +263,7 @@ https://wiki.openttd.org/Compiling_on_(GNU/)Linux_and_*BSD.
 
 SuperTuxKart is a 3D open-source arcade racer with a variety characters,
 tracks, and modes to play. It is basically a rip off of MarioKart. This example
-is a more advanced on than the previous two, and there are even fewer hints
+is a more advanced one than the previous two, and there are even fewer hints
 provided. This is intended to be a bit of a challenge, but once you have
 successfully built and installed this package, it is indicitive that you are
 well on your way to mastering the process of building software from source.
