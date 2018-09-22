@@ -4,6 +4,18 @@
 
 # Configure the Cucumber Linux Virtual Machine
 
+## Configuring Networking
+
+See https://wiki.cucumberlinux.com/wiki/sysconfig:networking
+
+## Adding an Unprivileged User
+
+See https://wiki.cucumberlinux.com/wiki/sysconfig:user_management
+
+## Setting up a Graphical Login
+
+See https://wiki.cucumberlinux.com/wiki/sysconfig:graphical_login_screen
+
 # Building Software from Source
 
 ## Example 1: HexChat
@@ -101,6 +113,16 @@ needs to be run as root.
 
 ### The Good and Decent Way
 
+In this example we will verify the integrity of the source tarball, compile
+HexChat, make a package file out of it and install the package with the
+system's package manager.
+
+In preparation for this, uninstall the version of HexChat we just installed;
+otherwise the two builds will conflict. From the original HexChat source
+directory run:
+
+    sudo make uninstall
+
 #### Downloading and Verifying the Source Code
 
 Previously, we made no effort to verify the integrity of the source code. This
@@ -110,6 +132,105 @@ This is not hypothetical; it has actually happened (read about the VSFTPD :)
 backdoor). There are generally two ways to go about veryifying the integerity:
 * Checksums
 * Signatures
+
+##### Signatures
+
+Signatures make use of a public key to cryptographically verify the integrity
+of the tarballs. This requires you to download an additional signature file
+(these usually end in *.sig, *.sign or *.asc). Using this method also requires
+you to obtain the public key that was used to create the signatures. It is not
+always easy to securely obtain the public key.
+
+To verify the signature for the HexChat tarball, download the signature:
+
+    wget https://dl.hexchat.net/hexchat/hexchat-2.10.2.tar.xz.asc
+
+Now, import the public key that was used to create the signature:
+
+    gpg --recv-keys '108B F221 2A05 1F4A 72B1  8448 B3C7 CE21 0DE7 6DFC'
+
+Finally, use GPG to verify the signature:
+
+    gpg --verify hexchat-2.10.2.tar.xz.asc
+
+##### Checksums
+
+Checksums make use of hashing functions to verify the integrity. Some common
+hashing algorithms that are used for verifying source tarballs are MD5, SHA1,
+SHA256 and SHA512. Note that you should /never/ use MD5 hashes anymore, and you
+should try to avoid using SHA1 when possible.
+
+Here are the checksums for the HexChat tarball:
+
+MD5 (Do not ever use):
+    c8e7477ac941295deaeb1732591ab20b  hexchat-2.10.2.tar.xz
+
+SHA1 (Try to avoid this):
+    3ce831cde92f2f9999a217523d124e5b4cd08333  hexchat-2.10.2.tar.xz
+
+SHA256 (This one is good):
+    87ebf365c576656fa3f23f51d319b3a6d279e4a932f2f8961d891dd5a5e1b52c  hexchat-2.10.2.tar.xz
+
+SHA512 (This one is even better):
+    799be6ca02d4f7bad98c005e0fb7dba151717b52841d7f2dd3ed86b80a20de934825a1e58aab4621ac751a605103e68e368a95e9709c48f52b9e5333e5e290ab  hexchat-2.10.2.tar.xz
+
+To verify the SHA256 checksum, save the SHA256 line above to the file
+sha256sums. Then run the following command:
+    sha256sum -c sha256sums
+
+The `-c` flag says to check the checksums in the file 'sha256sums'.
+
+Now verify it again using the SHA512 checksum.
+
+Food for thought:
+* Why should we never use MD5?
+* Why should we try to avoid SHA1 and why is this less of an issue than MD5
+  (although still an issue)?
+* Why is SHA512 better than SHA256?
+
+#### Building (Again)
+
+As before, we extract the source tarball and `cd` to its directory. After this,
+run `./configure`, only using the following flags:
+
+    ./configure --prefix=/usr --libdir=/usr/lib64 --sysconfdir=/etc --localstatedir=/var
+
+We will discuss what each of these flags does in depth. Now that the source
+tree has been configured for this build, compile HexChat using `make`. In this
+build, we will exploit parallelism by compiling using multiple cores. Run:
+
+    make -jN
+
+where 'N' is the number of cpu cores you have. To determine how many cores you
+have, run `nproc`.
+
+#### Installing the Binaries
+
+This time, we will create a package archive. To do this, we must first make a
+"staging" directory. This will effectively serve as a seperate root directory
+that contains only this package's files.
+
+    mkdir /tmp/staging
+
+Now install the binaries to the staging directory. To do this, make use of the
+DESTDIR variable in the makefile, which says to install to a root directory
+other than /.
+
+    sudo make install DESTDIR=/tmp/staging
+
+Now, compress the staging directory into a package tarball:
+
+    cd /tmp/staging
+    sudo makepkg -l y -c n ../hexchat-2.10.2-x86_64-1.txz
+
+Notice the package naming convention: NAME-VERSION-ARCHITECTURE-BUILDNUMBER.txz.
+
+Finally, install your new package:
+
+    sudo installpkg /tmp/hexchat-2.10.2-x86_64-1.txz
+
+You may wish to move the package file to a more permanant location, as all the
+files in /tmp will be deleted on the next reboot.
 
 ## Example 2: SuperTuxKart
 
