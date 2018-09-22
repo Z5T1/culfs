@@ -163,19 +163,24 @@ should try to avoid using SHA1 when possible.
 Here are the checksums for the HexChat tarball:
 
 MD5 (Do not ever use):
+
     c8e7477ac941295deaeb1732591ab20b  hexchat-2.10.2.tar.xz
 
 SHA1 (Try to avoid this):
+
     3ce831cde92f2f9999a217523d124e5b4cd08333  hexchat-2.10.2.tar.xz
 
 SHA256 (This one is good):
+
     87ebf365c576656fa3f23f51d319b3a6d279e4a932f2f8961d891dd5a5e1b52c  hexchat-2.10.2.tar.xz
 
 SHA512 (This one is even better):
+
     799be6ca02d4f7bad98c005e0fb7dba151717b52841d7f2dd3ed86b80a20de934825a1e58aab4621ac751a605103e68e368a95e9709c48f52b9e5333e5e290ab  hexchat-2.10.2.tar.xz
 
 To verify the SHA256 checksum, save the SHA256 line above to the file
 sha256sums. Then run the following command:
+
     sha256sum -c sha256sums
 
 The `-c` flag says to check the checksums in the file 'sha256sums'.
@@ -218,6 +223,10 @@ other than /.
 
     sudo make install DESTDIR=/tmp/staging
 
+It is important to note that this variable is NOT always DESTDIR; it can vary
+on a package to package basis. Make sure you know what it is for the package
+you are currently installing.
+
 Now, compress the staging directory into a package tarball:
 
     cd /tmp/staging
@@ -232,14 +241,63 @@ Finally, install your new package:
 You may wish to move the package file to a more permanant location, as all the
 files in /tmp will be deleted on the next reboot.
 
-## Example 2: SuperTuxKart
+## Example 2: OpenTTD
 
-Download SuperTuxKart from https://supertuxkart.net/Main_Page
+In this example, we will be building OpenTTD. OpenTTD is a clone of the game
+"Transport Tycoon Deluxe." Their website is http://www.openttd.org/. At this
+point, you should be beginning to feel a little more comfortable compiling
+software from source, so explicit instructions will not be given. Look back at
+example 1 if you are unsure of a command.
+
+OpenTTD has two dependencies that are not part of Cucumber Linux. 
+* SDL
+* ICU
+
+Make sure to install them first. If you are unsure of how to proceed in
+installing them, see the hints section.
+
+Once you have installed the dependencies, follow the instructions at
+https://wiki.openttd.org/Compiling_on_(GNU/)Linux_and_*BSD.
+
+## Example 3: SuperTuxKart
+
+SuperTuxKart is a 3D open-source arcade racer with a variety characters,
+tracks, and modes to play. It is basically a rip off of MarioKart. This example
+is a more advanced on than the previous two, and there are even fewer hints
+provided. This is intended to be a bit of a challenge, but once you have
+successfully built and installed this package, it is indicitive that you are
+well on your way to mastering the process of building software from source.
+
+Download SuperTuxKart from https://supertuxkart.net/Main_Page.
 
 Extract the source tarball.
 
 Follow the compilation instructions in INSTALL.md. Notice that SuperTuxKart
 uses `cmake`, whereas HexChat used `./configure`.
+
+# Hints
+
+Here are some hints that help address many of the common issues encountered
+when compiling software:
+* If you're ever unsure of how to proceed in compiling a package, read the
+  README and INSTALL files at the root of the package's source tree. If you're
+  still having issues, take a look at the buildscript from another distro. There
+  are links to many the location of several other distros' buildscript
+  repositories in the resources section.
+
+# Resources
+
+## Buildscript Repositories
+
+Other distros maintain repositories of their own buildscripts. These can be
+great places to look if you're ever unsure of how to build a package. They are
+listed from most helpful to least helpful (in my opinion, of course and only as
+they are relevant to Cucumber Linux):
+* Cucumber Linux: https://mirror.cucumberlinux.com/cucumber/cucumber-1.1/source/
+* Beyond Linux from Scratch: http://www.linuxfromscratch.org/blfs/view/8.3/
+* Slackware: https://mirrors.slackware.com/slackware/slackware-current/source/
+* Slackbuilds.org: https://slackbuilds.org/
+* Arch User Repository: https://aur.archlinux.org/
 
 vi:syntax=markdown
 
