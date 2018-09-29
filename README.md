@@ -28,6 +28,10 @@ that week's repsective directory. Here's a table of how the weeks line up:
     | week02 | 2018-09-23  | Configuring Cucumber Linux & Intro to Building |
     |        |             | software from source.                          |
     +--------+-------------+------------------------------------------------+
+    | week03 | 2018-09-30  | Building Cucumber Linux from Scratch through   |
+    |        |             | phase 5 (A.K.A. constructing the temporary     |
+    |        |             | system).                                       |
+    +--------+-------------+------------------------------------------------+
 
 # Virtual Machine Snapshots
 
