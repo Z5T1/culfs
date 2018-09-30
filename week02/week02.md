@@ -287,6 +287,8 @@ when compiling software:
 
 # Resources
 
+Recording of this week's presentation: https://z5t1.com/culfs/week02.ogv
+
 ## Buildscript Repositories
 
 Other distros maintain repositories of their own buildscripts. These can be
