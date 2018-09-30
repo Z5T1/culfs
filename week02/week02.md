@@ -289,6 +289,8 @@ when compiling software:
 
 Recording of this week's presentation: https://z5t1.com/culfs/week02.ogv
 
+The Virtual Machine snapshot taken at the end of this week is called 'Week02'.
+
 ## Buildscript Repositories
 
 Other distros maintain repositories of their own buildscripts. These can be
