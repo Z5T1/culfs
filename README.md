@@ -29,11 +29,13 @@ that week's repsective directory. Here's a table of how the weeks line up:
     |        |             | software from source.                          |
     +--------+-------------+------------------------------------------------+
     | week03 | 2018-09-30  | Building Cucumber Linux from Scratch through   |
-    |        |             | phase 5 (A.K.A. constructing the temporary     |
+    |        |             | phase 1 (A.K.A. constructing the temporary     |
     |        |             | system).                                       |
     +--------+-------------+------------------------------------------------+
-    | week04 | 2018-10-14  | Building Cucumber Linux from Scratch through   |
-    |        |             | phase 6 (A.K.A. constructing the base system). |
+    | week04 | 2018-10-14  | FreeBSD and OpenBSD                            |
+    +--------+-------------+------------------------------------------------+
+    | week05 | 2018-10-14  | Building Cucumber Linux from Scratch through   |
+    |        |             | phase 3 (A.K.A. constructing the base system). |
     +--------+-------------+------------------------------------------------+
 
 # Virtual Machine Snapshots
