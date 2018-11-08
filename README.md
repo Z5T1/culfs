@@ -34,7 +34,7 @@ that week's repsective directory. Here's a table of how the weeks line up:
     +--------+-------------+------------------------------------------------+
     | week04 | 2018-10-14  | FreeBSD and OpenBSD                            |
     +--------+-------------+------------------------------------------------+
-    | week05 | 2018-10-14  | Building Cucumber Linux from Scratch through   |
+    | week05 | 2018-11-04  | Building Cucumber Linux from Scratch through   |
     |        |             | phase 3 (A.K.A. constructing the base system). |
     +--------+-------------+------------------------------------------------+
 
