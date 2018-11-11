@@ -37,6 +37,9 @@ that week's repsective directory. Here's a table of how the weeks line up:
     | week05 | 2018-11-04  | Building Cucumber Linux from Scratch through   |
     |        |             | phase 3 (A.K.A. constructing the base system). |
     +--------+-------------+------------------------------------------------+
+    | week06 | 2018-11-11  | Finishing the Cucumber Linux from Scratch      |
+    |        |             | and creating the installation ISO.             |
+    +--------+-------------+------------------------------------------------+
 
 # Virtual Machine Snapshots
 
