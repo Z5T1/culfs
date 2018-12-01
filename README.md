@@ -42,12 +42,8 @@ that week's repsective directory. Here's a table of how the weeks line up:
     +--------+-------------+------------------------------------------------+
     | week07 | 2018-11-18  | Vulnerability Analysis and Patching.           |
     +--------+-------------+------------------------------------------------+
-    | week08 | 2018-12-02  | Porting Software to Cucumber Linux.            |
+    | week08 | 2018-12-02  | Key Signing Party and Cake.                    |
     +--------+-------------+------------------------------------------------+
-    | week09 | 2018-12-09  | Key Signing Party and Cake (See Note 1).       |
-    +--------+-------------+------------------------------------------------+
-
-Note 1: The cake may be a lie.
 
 # Virtual Machine Snapshots
 
