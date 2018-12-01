@@ -32,19 +32,19 @@ GPG comes standard with most Linux distributions. If it does not, it can usually
 
 Install the `gnupg` port:
 
-  pkg install gnupg
+    pkg install gnupg
 
 #### OpenBSD
 
 Install the `gnupg` port:
 
-  pkg_add gnupg
+    pkg_add gnupg
 
 ### Generate the Keypair
 
 Run the following command to begin the interactive key generation utility:
 
-  gpg --full-gen-key
+    gpg --full-gen-key
 
 For the most part, you can accept the default options, with one exception:
 When asked which key size you would like, I recommend ignoring the default and opting for a 4096 bit key; 2048 bit keys are getting less and less secure; with a high end super computer, a 2048 bit RSA key can be broken in 8 years.
@@ -57,7 +57,7 @@ Once your keypair finished generating, you will be given a key fingerprint. It i
 
 In the event that your key is ever compromised or you lose the private key, it is important to have a revocation certificate. Publishing this certificate will indicate to other people that your key is no longer valid. To generate a revocation certificate, run the following command:
 
-  gpg --output revoke.asc --gen-revoke 484CF66FA2A3ADB2939ACB1019D7FD6A30198D3A
+    gpg --output revoke.asc --gen-revoke 484CF66FA2A3ADB2939ACB1019D7FD6A30198D3A
 
 The file revoke.asc is your revocation certificate. Make sure to keep it in a safe place; if it is ever stolen, someone could publish it and render your key useless. It may (at a minimum) be a good idea to `chmod 600` it.
 
@@ -65,21 +65,21 @@ The file revoke.asc is your revocation certificate. Make sure to keep it in a sa
 
 The public key is used publicly to encrypt messages that are to be sent to you and verify signatures that you have signed. In order to make it easier for people to obtain your public key, it is customary to publish it to publicly accessible key servers. To publish your public key, use the following command (make to replace the key fingerprint in the example with your key fingerprint):
 
-  gpg --send-keys 484CF66FA2A3ADB2939ACB1019D7FD6A30198D3A
+    gpg --send-keys 484CF66FA2A3ADB2939ACB1019D7FD6A30198D3A
 
 ## Signing a PGP Key with GPG
 
 To sign a PGP key, it is first necessary to receive the key you are planning to sign from a key server. To do this, run the follow command (substituting the key fingerprint of the key you wish to sign for the one in the example):
 
-  gpg --recv-keys EC5649DA401E22ABFA6736EF6A4463C040102233
+    gpg --recv-keys EC5649DA401E22ABFA6736EF6A4463C040102233
 
 Now, sign the public key with your private key. By doing this, you are attesting that the owner information in the key is correct, so *make sure to inspect and verify the owner information before you sign the key.* Once you have done that, use the following command to sign the key:
 
-  gpg --sign-key EC5649DA401E22ABFA6736EF6A4463C040102233
+    gpg --sign-key EC5649DA401E22ABFA6736EF6A4463C040102233
 
 Once you have signed the key, send it back to the key server. Doing this will upload your signature:
 
-  gpg --send-keys EC5649DA401E22ABFA6736EF6A4463C040102233
+    gpg --send-keys EC5649DA401E22ABFA6736EF6A4463C040102233
 
 # Resources
 
