@@ -49,3 +49,18 @@ In Fall of 2018, we built our own Linux systems from source, from scratch using
 a process very similar to Linux from Scratch. We then explored more advanced
 Linux topics such as security patching and package porting. For details on what we did this semester, see the README-2018-fall.md file in this directory.
 
+# Resources
+
+Here are some useful resources:
+* Cucumber Linux Website: https://cucumberlinux.com/
+* Cucumber Linux Wiki: https://wiki.cucumberlinux.com/wiki/
+* Cucumber Linux GitHub: https://github.com/cucumberlinux
+* Original Linux from Scratch Website: http://www.linuxfromscratch.org/
+
+# Getting Help
+
+As with most technical problems, DuckDuckGo (or whatever your favorite search
+engine is) is a good place to start when you run into issues. If that's not
+doing the trick, feel free to email me at scott@cucumberlinux.com or hop on our
+IRC channel: #cucumberlinux on freenode.net.
+
