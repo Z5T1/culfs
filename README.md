@@ -18,6 +18,17 @@ and someone will be in touch with you shortly.
 The outline, resources and other data for what we do each week can be found in
 that week's repsective directory. Here's a table of how the weeks line up:
 
+    Sprint 2019
+
+    +--------+-------------+------------------------------------------------+
+    | Week # | Date        | Topics                                         |
+    +--------+-------------+------------------------------------------------+
+    | week09 | 2019-04-10  | Getting Started with Cucumber Linux            |
+    |        |             | Development.                                   |
+    +--------+-------------+------------------------------------------------+
+
+    Fall 2018
+
     +--------+-------------+------------------------------------------------+
     | Week # | Date        | Topics                                         |
     +--------+-------------+------------------------------------------------+
